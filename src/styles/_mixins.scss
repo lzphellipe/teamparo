@@ -1,0 +1,12 @@
+/* Breakpoints e utilitários do design system */
+$bp-sm: 560px;
+$bp-md: 900px;
+$bp-lg: 1140px;
+
+@mixin below($bp) { @media (max-width: $bp) { @content; } }
+
+@mixin focus-ring {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

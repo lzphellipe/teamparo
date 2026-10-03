@@ -1,0 +1,34 @@
+<header class="site-header">
+  <div class="tp-container bar">
+    <a class="brand" routerLink="/" aria-label="TEAMPARO — página inicial" (click)="closeMenu()">
+      <svg class="mark" viewBox="0 0 240 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#155E58" /><stop offset=".5" stop-color="#4F9D6E" /><stop offset="1" stop-color="#E0865A" />
+          </linearGradient>
+        </defs>
+        <path d="M60,60 C60,30 100,30 120,60 C140,90 180,90 180,60 C180,30 140,30 120,60 C100,90 60,90 60,60 Z"
+              fill="none" stroke="url(#g-brand)" stroke-width="15" stroke-linecap="round" />
+      </svg>
+      <span class="name">TEA<b>MPARO</b></span>
+    </a>
+
+    <nav class="nav" [class.open]="menuOpen()" aria-label="Menu principal">
+      <a href="#sobre" (click)="closeMenu()">Quem somos</a>
+      <a href="#fazemos" (click)="closeMenu()">O que fazemos</a>
+      <a href="#recursos" (click)="closeMenu()">Recursos</a>
+      <a href="#ajudar" (click)="closeMenu()">Como ajudar</a>
+      <a href="#transparencia" (click)="closeMenu()">Transparência</a>
+      <a href="#contato" (click)="closeMenu()">Contato</a>
+    </nav>
+
+    <div class="actions">
+      <tp-button variant="ghost" href="#ajudar" class="hide-sm">Seja voluntário</tp-button>
+      <tp-button variant="primary" href="#ajudar">Doar</tp-button>
+      <button class="menu-toggle" type="button" (click)="toggleMenu()"
+              [attr.aria-expanded]="menuOpen()" aria-controls="nav" [attr.aria-label]="menuOpen() ? 'Fechar menu' : 'Abrir menu'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
+      </button>
+    </div>
+  </div>
+</header>

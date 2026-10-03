@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>TEAMPARO — Inclusão e amparo à neurodiversidade</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A TEAMPARO acolhe pessoas autistas e com outras neurodivergências e suas famílias, promovendo inclusão, autonomia e direitos.">
+  <meta name="theme-color" content="#155E58">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TEAMPARO — Inclusão e amparo à neurodiversidade">
+  <meta property="og:description" content="Acolhemos pessoas neurodivergentes e suas famílias. Conheça, doe ou seja voluntário.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 120'%3E%3Cpath d='M60 60C60 30 100 30 120 60C140 90 180 90 180 60C180 30 140 30 120 60C100 90 60 90 60 60Z' fill='none' stroke='%23155E58' stroke-width='16' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Tipografia: Atkinson Hyperlegible (legibilidade) + Baloo 2 (display acolhedor) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Baloo+2:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- SEO estruturado: organização sem fins lucrativos -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "TEAMPARO",
+    "alternateName": "Associação de Apoio e Atendimento às Famílias Atípicas",
+    "description": "ONG de apoio a pessoas autistas e com outras neurodivergências e suas famílias.",
+    "url": "https://www.teamparo.org.br",
+    "logo": "https://www.teamparo.org.br/assets/logo.svg",
+    "areaServed": "Guaranésia, MG, Brasil",
+    "knowsAbout": ["Autismo", "TEA", "Neurodiversidade", "Inclusão", "TDAH"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Guaranésia",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</head>
+<body>
+  <tp-root></tp-root>
+
+  <!-- VLibras — tradução para Língua Brasileira de Sinais (carrega no navegador do usuário) -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      try { new window.VLibras.Widget('https://vlibras.gov.br/app'); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

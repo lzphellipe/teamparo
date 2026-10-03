@@ -1,0 +1,219 @@
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="tp-container grid">
+    <div class="copy">
+      <span class="tp-kicker eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10" /></svg>
+        ONG pela neurodiversidade
+      </span>
+      <h1>Cada pessoa é única.<br><span class="tp-spectrum-text">Toda diferença merece amparo.</span></h1>
+      <p class="tp-lead">Acolhemos pessoas autistas e com outras neurodivergências, e caminhamos junto com suas famílias rumo à inclusão, à autonomia e a direitos garantidos.</p>
+      <div class="cta">
+        <tp-button variant="primary" href="#ajudar">Quero doar</tp-button>
+        <tp-button variant="ghost" href="#sobre">Conheça a TEAMPARO</tp-button>
+      </div>
+    </div>
+
+    <figure class="art">
+      <svg class="infinity" viewBox="0 0 240 120" role="img" aria-labelledby="inf-title">
+        <title id="inf-title">Símbolo do infinito, que representa a neurodiversidade</title>
+        <defs>
+          <linearGradient id="g-inf" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#155E58" /><stop offset=".34" stop-color="#4F9D6E" />
+            <stop offset=".7" stop-color="#E0865A" /><stop offset="1" stop-color="#6E5E97" />
+          </linearGradient>
+        </defs>
+        <path class="glow" d="M60,60 C60,30 100,30 120,60 C140,90 180,90 180,60 C180,30 140,30 120,60 C100,90 60,90 60,60 Z" stroke="url(#g-inf)" />
+        <path class="line" d="M60,60 C60,30 100,30 120,60 C140,90 180,90 180,60 C180,30 140,30 120,60 C100,90 60,90 60,60 Z" stroke="url(#g-inf)" pathLength="1" />
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ IMPACTO ============ -->
+<section class="impact" aria-label="Nosso alcance">
+  <div class="tp-container stats">
+    @for (s of content.impact; track s.label) {
+      <div class="stat"><span class="num">{{ s.value }}</span><span class="lbl">{{ s.label }}</span></div>
+    }
+  </div>
+</section>
+
+<!-- ============ QUEM SOMOS ============ -->
+<section id="sobre" class="tp-section">
+  <div class="tp-container">
+    <tp-section-heading
+      kicker="Quem somos"
+      headingId="sobre-title"
+      title="Neurodiversidade não é algo a corrigir. É parte da diversidade humana."
+      subtitle="A TEAMPARO nasceu do encontro de famílias, profissionais e pessoas neurodivergentes que acreditam em um cuidado baseado em respeito, ciência e protagonismo — sempre sob o princípio “nada sobre nós sem nós”." />
+
+    <div class="tp-grid tp-grid--3">
+      <article class="tp-card pillar">
+        <h3>Missão</h3>
+        <p class="tp-muted">Promover a inclusão, a autonomia e a qualidade de vida de pessoas neurodivergentes, oferecendo amparo às suas famílias.</p>
+      </article>
+      <article class="tp-card pillar">
+        <h3>Visão</h3>
+        <p class="tp-muted">Uma sociedade que reconhece e valoriza a neurodiversidade, onde cada pessoa é acolhida do seu jeito.</p>
+      </article>
+      <article class="tp-card pillar">
+        <h3>Valores</h3>
+        <p class="tp-muted">Respeito à neurodiversidade, acolhimento, ética e ciência, transparência e protagonismo das pessoas neurodivergentes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O QUE FAZEMOS ============ -->
+<section id="fazemos" class="tp-section tp-section--alt">
+  <div class="tp-container">
+    <tp-section-heading
+      kicker="O que fazemos"
+      title="Programas que acolhem, capacitam e defendem direitos"
+      subtitle="Atuamos em diferentes frentes, do acolhimento individual à transformação de escolas, empresas e políticas públicas." />
+
+    <div class="tp-grid tp-grid--3">
+      @for (p of content.programs; track p.title) {
+        <article class="tp-card program">
+          <span class="tp-tag">{{ p.tag }}</span>
+          <h3>{{ p.title }}</h3>
+          <p class="tp-muted">{{ p.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECURSOS ============ -->
+<section id="recursos" class="tp-section">
+  <div class="tp-container">
+    <tp-section-heading
+      kicker="Recursos e informação"
+      title="Conteúdo confiável, para cada caminho"
+      subtitle="Reunimos materiais em linguagem simples e direta para dois públicos com necessidades diferentes." />
+
+    <div class="tp-grid tp-grid--2">
+      @for (r of content.resources; track r.title) {
+        <div class="res" [class.res--fam]="r.variant === 'familias'" [class.res--nd]="r.variant === 'neurodivergentes'">
+          <h3>{{ r.title }}</h3>
+          <p class="tp-muted">{{ r.intro }}</p>
+          <ul>
+            @for (item of r.items; track item) { <li>{{ item }}</li> }
+          </ul>
+          <tp-button variant="ghost" href="#contato">{{ r.cta }}</tp-button>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO AJUDAR ============ -->
+<section id="ajudar" class="tp-section tp-section--alt">
+  <div class="tp-container">
+    <tp-section-heading
+      kicker="Como ajudar"
+      title="Sua parte transforma vidas"
+      subtitle="Há muitas formas de fazer parte. Escolha a que combina com você — toda contribuição conta." />
+
+    <div class="help-grid">
+      <div class="help help--donate">
+        <h3>Doe</h3>
+        <p>Sua doação sustenta o acolhimento de famílias e mantém nossos programas funcionando o ano inteiro.</p>
+        <div class="pix">
+          <span class="pix-label">Chave Pix (CNPJ)</span>
+          <code>{{ content.pixKey }}</code>
+          <button type="button" class="pix-copy" (click)="copyPix()" aria-describedby="pix-status">
+            {{ pixCopied() ? 'Copiado!' : 'Copiar chave' }}
+          </button>
+        </div>
+        <p id="pix-status" class="tp-sr-only" role="status" aria-live="polite">
+          {{ pixCopied() ? 'Chave Pix copiada' : '' }}
+        </p>
+      </div>
+
+      <div class="help">
+        <h3>Seja voluntário</h3>
+        <p class="tp-muted">Doe tempo e talento. Buscamos pessoas de diversas áreas — inclusive (e especialmente) neurodivergentes.</p>
+        <tp-button variant="ghost" href="#contato">Quero ser voluntário</tp-button>
+      </div>
+
+      <div class="help">
+        <h3>Seja parceiro</h3>
+        <p class="tp-muted">Sua empresa pode apoiar projetos, oferecer vagas inclusivas ou patrocinar ações.</p>
+        <tp-button variant="ghost" href="#contato">Quero ser parceiro</tp-button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANSPARÊNCIA ============ -->
+<section id="transparencia" class="tp-section">
+  <div class="tp-container">
+    <tp-section-heading
+      kicker="Transparência"
+      title="Confiança se constrói com clareza"
+      subtitle="Prestamos contas de cada recurso recebido. Nossos documentos estão sempre disponíveis para consulta." />
+
+    <div class="tp-grid tp-grid--3">
+      @for (doc of content.transparency; track doc.title) {
+        <a class="doc" [href]="doc.href">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" />
+          </svg>
+          <span class="doc-text"><strong>{{ doc.title }}</strong><span class="doc-year">{{ doc.year }}</span></span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATROCINADORES ============ -->
+<section id="patrocinadores" class="tp-section tp-section--alt">
+  <div class="tp-container">
+    <tp-section-heading
+      kicker="Quem apoia"
+      title="Nossos parceiros fazem a diferença"
+      subtitle="Empresas e organizações que tornam o nosso trabalho possível." />
+    <div class="sponsors">
+      @for (sp of content.sponsors; track sp.name) {
+        <div class="sponsor" [attr.data-tier]="sp.tier">
+          <span class="logo" aria-hidden="true">{{ sp.name.charAt(0) }}</span>
+          <span class="sp-name">{{ sp.name }}</span>
+          <span class="sp-tier">{{ sp.tier }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section id="contato" class="tp-section">
+  <div class="tp-container contact-grid">
+    <div>
+      <tp-section-heading kicker="Contato" title="Fale com a gente" subtitle="Estamos aqui para ouvir. Responderemos no menor tempo possível." />
+      <div class="info">
+        <p><strong>E-mail</strong> contato&#64;teamparo.org.br</p>
+        <p><strong>WhatsApp</strong> (00) 00000-0000</p>
+        <p><strong>Endereço</strong> Guaranésia, MG</p>
+      </div>
+    </div>
+
+    <form class="form" aria-label="Formulário de contato" (submit)="$event.preventDefault()">
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+        <span id="email-hint" class="hint">Usaremos apenas para responder seu contato.</span>
+      </div>
+      <div class="field">
+        <label for="msg">Mensagem</label>
+        <textarea id="msg" name="msg" rows="5" required></textarea>
+      </div>
+      <tp-button variant="primary" type="submit">Enviar mensagem</tp-button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'tp-site-footer',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './site-footer.component.html',
+  styleUrl: './site-footer.component.scss',
+})
+export class SiteFooterComponent {
+  readonly year = new Date().getFullYear();
+}

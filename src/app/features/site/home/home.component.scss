@@ -1,0 +1,90 @@
+/* ============ HERO ============ */
+.hero { padding-block: clamp(2.5rem, 6vw, 4.5rem) var(--pad-section); }
+.hero .grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.hero .eyebrow { display: inline-flex; align-items: center; gap: .5rem; }
+.hero h1 { font-size: var(--text-display); margin-bottom: var(--space-5); }
+.hero .tp-lead { max-width: 34ch; margin-bottom: var(--space-6); }
+.hero .cta { display: flex; gap: .9rem; flex-wrap: wrap; }
+
+.art { display: flex; justify-content: center; }
+.infinity { width: 100%; max-width: 380px; height: auto; overflow: visible; }
+.infinity .line {
+  fill: none; stroke-width: 13; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: draw var(--dur-3) var(--ease) forwards .3s;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.infinity .glow { fill: none; stroke-width: 13; opacity: .18; filter: blur(7px); }
+[data-contrast="high"] .infinity .glow { display: none; }
+@media (prefers-reduced-motion: reduce) { .infinity .line { animation: none; stroke-dashoffset: 0; } }
+
+@media (max-width: 900px) {
+  .hero .grid { grid-template-columns: 1fr; }
+  .art { order: -1; max-width: 300px; }
+}
+
+/* ============ IMPACTO ============ */
+.impact { background: var(--primary-strong); color: #fff; }
+.impact .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-block: var(--space-7); text-align: center; }
+.impact .num { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1; }
+.impact .lbl { display: block; margin-top: .5rem; opacity: .9; font-size: var(--text-base); }
+@media (max-width: 900px) { .impact .stats { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; } }
+@media (max-width: 560px) { .impact .stats { grid-template-columns: 1fr; } }
+
+/* ============ PILARES / PROGRAMAS ============ */
+.pillar h3 { font-size: var(--text-xl); margin-bottom: var(--space-2); }
+.program { display: flex; flex-direction: column; gap: .6rem; }
+.program h3 { font-size: 1.25rem; margin: .3rem 0 0; }
+
+/* ============ RECURSOS ============ */
+.res { border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-6); }
+.res h3 { font-size: var(--text-xl); margin-bottom: var(--space-3); }
+.res ul { margin: 0 0 var(--space-5); padding-left: 1.2rem; }
+.res li { margin: .4rem 0; }
+.res--fam { background: linear-gradient(135deg, #EAF1EC, #E0EBE2); }
+.res--nd { background: linear-gradient(135deg, #F3EAEA, #EFE6EE); }
+[data-contrast="high"] .res--fam, [data-contrast="high"] .res--nd { background: #fff; }
+
+/* ============ COMO AJUDAR ============ */
+.help-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-5); align-items: stretch; }
+.help { border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-6); background: var(--bg); display: flex; flex-direction: column; gap: var(--space-3); }
+.help h3 { font-size: var(--text-xl); margin: 0; }
+.help tp-button { margin-top: auto; }
+.help--donate { background: linear-gradient(150deg, var(--primary), var(--primary-strong)); color: #fff; border: none; }
+.help--donate h3, .help--donate p { color: #fff; }
+
+.pix { background: rgba(255,255,255,.14); border: 1px dashed rgba(255,255,255,.5); border-radius: var(--radius-sm); padding: .9rem 1rem; display: flex; flex-direction: column; gap: .4rem; margin-top: var(--space-2); }
+.pix-label { font-size: var(--text-sm); opacity: .9; }
+.pix code { font-size: 1.1rem; font-weight: 700; word-break: break-all; }
+.pix-copy { align-self: flex-start; margin-top: .3rem; background: #fff; color: var(--primary-strong); border: none; border-radius: var(--radius-pill); padding: .45rem 1rem; font: inherit; font-weight: 700; cursor: pointer; }
+.pix-copy:hover { background: #eee; }
+@media (max-width: 900px) { .help-grid { grid-template-columns: 1fr; } }
+
+/* ============ TRANSPARÊNCIA ============ */
+.doc { display: flex; align-items: center; gap: .9rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 1.1rem 1.3rem; text-decoration: none; color: var(--ink); }
+.tp-section--alt .doc { background: var(--bg); }
+.doc:hover { border-color: var(--primary); }
+.doc svg { color: var(--accent-strong); flex-shrink: 0; }
+.doc-text { display: flex; flex-direction: column; }
+.doc-text strong { color: var(--primary-strong); }
+.doc-year { font-size: var(--text-sm); color: var(--ink-muted); }
+
+/* ============ PATROCINADORES ============ */
+.sponsors { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+.sponsor { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-5); text-align: center; display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.sponsor .logo { width: 56px; height: 56px; border-radius: 14px; background: var(--surface-alt); color: var(--primary); font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; display: grid; place-items: center; }
+.sponsor .sp-name { font-weight: 700; }
+.sponsor .sp-tier { font-size: var(--text-sm); color: var(--ink-muted); text-transform: capitalize; }
+@media (max-width: 900px) { .sponsors { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .sponsors { grid-template-columns: 1fr; } }
+
+/* ============ CONTATO ============ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); }
+.info p { margin: .3rem 0 1.1rem; }
+.info strong { display: block; color: var(--primary-strong); }
+.form .field { margin-bottom: var(--space-5); }
+.form label { display: block; font-weight: 700; margin-bottom: .4rem; }
+.form input, .form textarea { width: 100%; font: inherit; padding: .8rem 1rem; border: 2px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); }
+.form input:focus, .form textarea:focus { border-color: var(--primary); outline: 3px solid var(--focus); outline-offset: 1px; }
+.form .hint { display: block; font-size: var(--text-sm); color: var(--ink-muted); margin-top: .3rem; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,94 @@
+/* ============================================================
+   TEAMPARO — Design Tokens
+   Paleta calma e de baixo brilho, pensada para conforto sensorial.
+   Tudo exposto como CSS custom properties para permitir
+   troca de tema (alto contraste) e escala de fonte em runtime.
+   ============================================================ */
+:root {
+  /* --- Marca (paleta do primeiro protótipo) --- */
+  --brand-teal:        #15708F;  /* primária */
+  --brand-teal-strong: #0E5871;
+  --brand-teal-soft:   #2E8DA8;
+  --brand-green:       #3F7D2B;
+  --brand-green-strong:#316021;
+  --brand-apricot:     #C8432A;  /* acento: coral */
+  --brand-apricot-strong:#A8351F;
+  --brand-violet:      #F2B530;  /* dourado, compõe o espectro */
+
+  /* --- Neutros (creme quente do primeiro protótipo) --- */
+  --paper:       #FBF7F0;
+  --surface:     #FFFFFF;
+  --surface-alt: #F3ECE0;
+  --ink:         #21303B;
+  --ink-soft:    #46545E;
+  --ink-muted:   #6B7780;
+  --line:        #E2D8C8;
+
+  /* --- Semânticos --- */
+  --bg:            var(--paper);
+  --primary:       var(--brand-teal);
+  --primary-strong:var(--brand-teal-strong);
+  --accent:        var(--brand-apricot);
+  --accent-strong: var(--brand-apricot-strong);
+  --on-primary:    #ffffff;
+  --on-accent:     #ffffff;
+  --focus:         var(--brand-teal-strong);
+
+  /* Gradiente do espectro */
+  --spectrum: linear-gradient(100deg,
+                var(--brand-teal) 0%,
+                var(--brand-green) 34%,
+                var(--brand-violet) 68%,
+                var(--brand-apricot) 100%);
+
+  /* --- Tipografia --- */
+  --font-body:    "Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-scale:   1; /* ajustado pela barra de acessibilidade */
+
+  --text-xs:   .8125rem;
+  --text-sm:   .9375rem;
+  --text-base: calc(1.0625rem * var(--font-scale));
+  --text-lg:   calc(1.25rem  * var(--font-scale));
+  --text-xl:   calc(1.5rem   * var(--font-scale));
+  --text-2xl:  calc(1.95rem  * var(--font-scale));
+  --text-3xl:  calc(2.5rem   * var(--font-scale));
+  --text-display: clamp(2.4rem, 5.5vw, 3.9rem);
+
+  --leading-tight: 1.15;
+  --leading-snug:  1.35;
+  --leading-body:  1.65;
+
+  /* --- Espaçamento (base 4px) --- */
+  --space-1:.25rem; --space-2:.5rem;  --space-3:.75rem; --space-4:1rem;
+  --space-5:1.5rem; --space-6:2rem;   --space-7:3rem;   --space-8:4rem; --space-9:6rem;
+  --pad-section: clamp(3.5rem, 8vw, 6rem);
+
+  /* --- Raio --- */
+  --radius-sm:8px; --radius-md:14px; --radius-lg:22px; --radius-pill:999px;
+
+  /* --- Elevação (suave, calma) --- */
+  --shadow-sm:0 1px 2px rgba(20,40,38,.06);
+  --shadow-md:0 10px 30px rgba(20,40,38,.08);
+  --shadow-lg:0 24px 60px rgba(20,40,38,.12);
+
+  /* --- Movimento --- */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --dur-1:.15s; --dur-2:.3s; --dur-3:.6s;
+
+  /* --- Layout --- */
+  --maxw:1140px;
+}
+
+/* Tema de alto contraste */
+[data-contrast="high"] {
+  --paper:#ffffff; --surface:#ffffff; --surface-alt:#f0f0f0;
+  --ink:#000000; --ink-soft:#141414; --ink-muted:#222222; --line:#000000;
+  --primary:#084356; --primary-strong:#042e3d;
+  --accent:#8C2E18; --accent-strong:#6E2412; --focus:#000000;
+}
+
+/* Respeita a preferência de redução de movimento do sistema */
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-1:0s; --dur-2:0s; --dur-3:0s; }
+}

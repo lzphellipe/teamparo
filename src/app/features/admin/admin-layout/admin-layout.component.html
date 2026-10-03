@@ -1,0 +1,20 @@
+<div class="admin">
+  <aside class="sidebar">
+    <a class="brand" routerLink="/">
+      <svg viewBox="0 0 240 120" aria-hidden="true" width="40" height="20">
+        <path d="M60,60 C60,30 100,30 120,60 C140,90 180,90 180,60 C180,30 140,30 120,60 C100,90 60,90 60,60 Z" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" />
+      </svg>
+      <span>TEA<b>MPARO</b></span>
+    </a>
+    <nav aria-label="Menu administrativo">
+      <a routerLink="dashboard" routerLinkActive="active">Painel</a>
+      <a routerLink="eventos" routerLinkActive="active">Eventos</a>
+      <a routerLink="doacoes" routerLinkActive="active">Doações</a>
+      <a routerLink="voluntarios" routerLinkActive="active">Voluntários</a>
+    </nav>
+    <a class="back" routerLink="/">← Voltar ao site</a>
+  </aside>
+  <main class="content">
+    <router-outlet />
+  </main>
+</div>
